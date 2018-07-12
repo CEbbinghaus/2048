@@ -70,21 +70,6 @@ class Game {
         }
     }
     move(d){
-        if(this.CheckFull()){
-            let m = false;
-            for(let x = 0; x < this.x; x++){
-                for(let y = 0; y < this.y; y++){
-                    if(this.CheckSquares(x, y, true).one){
-                        m = true;
-                    }
-                }
-            }
-            if(!m){
-                if(confirm("you Have Lost")){
-                    location.reload();
-                }
-            }
-        }
         let x = d.x;
         let y = d.y;
         let moved = false;
@@ -106,6 +91,21 @@ class Game {
         if(moved && !this.CheckFull())
         this.spawnRandom();
         this.draw();
+        if(this.CheckFull()){
+            let m = false;
+            for(let x = 0; x < this.x; x++){
+                for(let y = 0; y < this.y; y++){
+                    if(this.CheckSquares(x, y, true).one){
+                        m = true;
+                    }
+                }
+            }
+            if(!m){
+                if(confirm("you Have Lost")){
+                    location.reload();
+                }
+            }
+        }
     }
     CheckFull(){
         let full = true;
