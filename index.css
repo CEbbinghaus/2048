@@ -1,0 +1,9 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+canvas {
+    background: #131a29;
+    text-shadow: #4d4c4c
+}
